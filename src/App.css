@@ -1,38 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+::-webkit-scrollbar {
+  width: 5px; 
+  height: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--blue);
+}
+
+@media (max-width: 991px) {
+  .navigation {
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navigation.hidden {
+    width: 180px;
+  }
+
+  .layout {
+    left: 0;
+    overflow-x: hidden;
+    width: 100%;
+  } 
+
+  .layout.active {
+    left: 190px;
+  } 
+
+  .search {
+    width: 250px;
+    right: 20px;
+  }
+
+  .status.in.progress {
+    white-space: nowrap;
+  }
+
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+    width: 93%;
+  }
+
+  .graphBox {
+    grid-template-columns: 1fr;
+    width: 96%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .recentOredrs {
+    width: 85%;
+  }
+  
+  .customers {
+    width: 85%;
+
+  }
+
+  .status.in.progress {
+    white-space: nowrap;
+  }
+
+  .graphBox {
+    grid-template-columns: 1fr;
+    width: 94%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .search {
+    width: 150px;
+    right: 20px;
+  }
+
+  .recentOredrs {
+    width: 80%;
+    overflow-x: auto;
+  }
+
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1;
+  }
+
+  .navigation.hidden {
+    width: 100%;
+    left: 0;
+    
+  }
+
+  .navigation.hidden ul {
+    overflow: hidden;
+  }
+  
+  .toggle {
+    z-index: 2;
+  }
+
+  .layout.active .toggle {
+    position: fixed;
+    right: 0;
+    color: var(--white)
+  }
+
+  .graphBox {
+    grid-template-columns: 1fr;
+    width: 96%;
+    height: auto;
+    overflow-x: auto;
   }
 }

@@ -1,0 +1,48 @@
+.cardBox {
+  position: relative;
+  width: 97%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: var(--bg);
+  padding: 30px;
+  box-shadow: 0 7px 25px var(--shd);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--color1)
+}
+
+.cardName {
+  color: var(--color3);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.iconBox {
+  font-size: 3rem;
+  color: var(--color3)
+}
+
+.card:hover {
+  background: var(--color1);
+}
+
+.card:hover .numbers,
+.card:hover .cardName,
+.card:hover .iconBox {
+  color: var(--color2)
+}

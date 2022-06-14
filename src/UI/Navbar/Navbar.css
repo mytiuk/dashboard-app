@@ -1,0 +1,124 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--color1);
+  border-left: 10px solid var(--color1);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation.hidden {
+  width: 70px;
+  height: 100%;
+}
+
+.navigation ul {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  list-style: none;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--color2);
+}
+
+.theme {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--color2);
+}
+
+.navigation ul li:hover a, 
+.navigation ul li.hovered a,
+.navigation ul li:hover .theme, 
+.navigation ul li.hovered .theme {
+  color: var(--color1)
+}
+
+ .icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+ .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+   /* curve outside */
+
+.navigation ul li:hover a::before, 
+.navigation ul li.hovered a::before,
+.navigation ul li:hover .theme::before, 
+.navigation ul li.hovered .theme::before   {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  top: -50px;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--bg);
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after,
+.navigation ul li:hover .theme::after, 
+.navigation ul li.hovered .theme::after  {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  bottom: -50px;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--bg);
+  pointer-events: none;
+}
+
+
+

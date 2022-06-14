@@ -1,0 +1,29 @@
+.graphBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  min-height: 200px;
+}
+
+.box1 {
+  position: relative;
+  display: grid;
+  width: 90%;
+  background: var(--bg);
+  padding: 20px;
+  box-shadow: 0 7px 25px var(--shd);
+  border-radius: 20px;
+}
+
+.box2 {
+  position: relative;
+  display: grid;
+  width: 90%;
+  background: var(--bg);
+  padding: 20px;
+ box-shadow: 0 7px 25px var(--shd);
+  border-radius: 20px;
+}
