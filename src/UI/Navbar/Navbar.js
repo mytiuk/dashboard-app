@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react'
+import { NavLink } from 'react-router-dom'
 import { DashboardContext } from '../../hoc/Context/Context'
 import './Navbar.css'
 
@@ -47,10 +48,10 @@ export const Navbar = ({onClick, turn}) => {
                   <span className='icon'><ion-icon name={item.icon}></ion-icon></span>
                   <span className='title'>{item.name}</span>
                  </div>
-              : <a href='/'>
+              : <NavLink to='/'>
                   <span className='icon'><ion-icon name={item.icon}></ion-icon></span>
                   <span className='title'>{item.name}</span>
-                </a>
+                </NavLink>
             } 
         </li>
       )

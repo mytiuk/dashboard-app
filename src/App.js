@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { Context } from './hoc/Context/Context'
 import { Navbar } from './UI/Navbar/Navbar'
 import { Layout } from './hoc/Layout/Layout'
-import { Cards } from './components/Cards/Cards'
-import { Charts } from './components/Charts/Charts'
-import { OrderList } from './components/OrderList/OrderList'
-import { Customers } from './components/Customers/Customers'
+import { Dashboard } from './container/Dashboard'
 import { themeHandler } from './style/style'
 import './App.css'
 
@@ -17,11 +15,9 @@ function App() {
       <Context>
         <Navbar onClick={() => setTurn(prev => !prev)} turn={turn}/>
         <Layout>
-          <Cards/>
-          <Charts/>
-          <OrderList>
-            <Customers/>
-          </OrderList>
+          <Routes>
+            <Route path='/' element={<Dashboard/>}/>
+          </Routes>
         </Layout>
       </Context>
     </div>
